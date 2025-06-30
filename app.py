@@ -1,4 +1,4 @@
-# 📜 Ancient Epics Story Generator with Mystical Vibes
+# 📜 Ancient Epics Story Generator with Ancient Vibes
 # Full Streamlit App: Generates AI-based stories, illustrations, and PDFs
 
 import streamlit as st
@@ -9,8 +9,7 @@ import random
 from fpdf import FPDF
 
 # === OPENROUTER API KEY ===
-OPENROUTER_API_KEY = "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"  # Replace with your actual key
-
+OPENROUTER_API_KEY = "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"
 # === PAGE SETUP ===
 st.set_page_config(page_title="Ancient Epics AI", page_icon="🪷", layout="wide")
 

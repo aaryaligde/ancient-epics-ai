@@ -9,7 +9,8 @@ import random
 from fpdf import FPDF
 
 # === OPENROUTER API KEY ===
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = st.secrets["openrouter"]["api_key"]  # Now uses secrets.toml
+
 # === PAGE SETUP ===
 st.set_page_config(page_title="Ancient Epics AI", page_icon="🪷", layout="wide")
 
@@ -106,7 +107,7 @@ with col2:
 
 col3, col4 = st.columns([3, 1])
 with col3:
-    user_prompt = st.text_input("🪄 What-if Prompt", random.choice(what_ifs))
+    user_prompt = st.text_input("🖄 What-if Prompt", random.choice(what_ifs))
 with col4:
     if st.button("🎲 Roll Dice"):
         user_prompt = random.choice(what_ifs)
@@ -173,7 +174,7 @@ if st.button("📖 Generate Story"):
 
         with open(pdf_path, "rb") as f:
             b64 = base64.b64encode(f.read()).decode()
-            href = f'<a href="data:application/octet-stream;base64,{b64}" download="Epic_Story.pdf">📥 Download Scroll (PDF)</a>'
+            href = f'<a href="data:application/octet-stream;base64,{b64}" download="Epic_Story.pdf">📅 Download Scroll (PDF)</a>'
             st.markdown(href, unsafe_allow_html=True)
 
         # === CONTINUE STORY OPTION ===
